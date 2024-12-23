@@ -65,6 +65,18 @@ const InputForm = () => {
             <h1>
                 InputForm
             </h1>
+            <form onSubmit={itemSubmit}>
+
+                <div>
+                    itemname
+                    <input type="text" name='itemName' onChange={onItemChangeHandler} value={item.itemName} placeholder='enter product name' />
+                    price
+                    <input type="number" name='itemPrice' onChange={onItemChangeHandler} value={item.itemPrice}  placeholder="enter product price"/>
+                    quantity
+                    <input type="number" name='itemQuantity' onChange={onItemChangeHandler} value={item.itemQuantity}  placeholder="enter product quantity"/>
+                </div>
+                <button type="submit">submit</button>
+            </form>
             <form onSubmit={onformsubmit}>
 
                 name
@@ -87,18 +99,7 @@ const InputForm = () => {
                 amount : {amount}
                 <button type="submit">submit</button>
             </form>̥
-            <form onSubmit={itemSubmit}>
-
-                <div>
-                    itemname
-                    <input type="text" name='itemName' onChange={onItemChangeHandler} value={item.itemName} placeholder='enter product name' />
-                    price
-                    <input type="number" name='itemPrice' onChange={onItemChangeHandler} value={item.itemPrice}  placeholder="enter product price"/>
-                    quantity
-                    <input type="number" name='itemQuantity' onChange={onItemChangeHandler} value={item.itemQuantity}  placeholder="enter product quantity"/>
-                </div>
-                <button type="submit">submit</button>
-            </form>
+            
         </div>
     </>
   )
