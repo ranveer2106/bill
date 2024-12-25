@@ -18,7 +18,7 @@ const InputForm = () => {
         order: [],
     })
 
-    let [item,setItem] = useState<item>({
+    const [item,setItem] = useState<item>({
         itemName:"",
         itemPrice:0,
         itemQuantity:0
