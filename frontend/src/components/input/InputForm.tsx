@@ -72,6 +72,20 @@ const InputForm = () => {
       
     }
   }
+  const handleDownload = () => {
+    if (image) {
+      const link = document.createElement('a');
+      link.href = image;
+      const date = new Date();
+      const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}_${date.getHours().toString().padStart(2, '0')}-${date.getMinutes().toString().padStart(2, '0')}`;
+
+    link.download = `${formData.name}_${formattedDate}.png`;
+      // link.download =  formData.name+"_"+Date + '.png';
+      link.click();
+    } else {
+      console.log("No image to download");
+    }
+  };
 
   const deleteItem = (index: number) => {
     const newOrder = [...formData.order];
@@ -152,18 +166,22 @@ const InputForm = () => {
               </div>
             );
           })}
+          <div>
+
+          gst(8%): {(amount * 0.08).toFixed(2)}
+          </div>
           amount: {amount}
           <button type="submit">submit</button>
         </form>
 
         {/* Button to trigger screenshot capture */}
         <button onClick={captureScreenshot}>Capture Screenshot</button>
-
+        <button onClick={handleDownload}>download</button>
         {/* Display the captured screenshot */}
         {image && (
           <div>
             <h3>Captured Screenshot</h3>
-            <img src={image} alt="Captured Screenshot" style={{ width: '300px' }} />
+            <img id="capture" src={image} alt="Captured Screenshot" style={{ width: '600px' }} />
           </div>
         )}
       </div>
