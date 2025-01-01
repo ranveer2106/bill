@@ -7,7 +7,7 @@ import InputForm from './components/input/InputForm'
 const App:React.FC = () => {
   return (
     <>
-      <div>App</div>
+      {/* <div>Sanjay Saree center</div> */}
       <InputForm/>
     </>
   )

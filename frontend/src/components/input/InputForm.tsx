@@ -5,7 +5,7 @@ import html2canvas from 'html2canvas';
 interface FormData {
   name: string;
   phone: number;
-  age: number;
+  // age: number;
   order: item[];
 }
 
@@ -14,7 +14,7 @@ const InputForm = () => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     phone: 0,
-    age: 0,
+    // age: 0,
     order: [],
   });
 
@@ -98,10 +98,12 @@ const InputForm = () => {
   return (
     <>
       <div>
-        <h1>InputForm</h1>
+        <h1> Invoice number</h1>
         <form onSubmit={itemSubmit}>
           <div>
-            itemname
+            <div>
+
+            Item Name
             <input
               type="text"
               name="itemName"
@@ -109,6 +111,9 @@ const InputForm = () => {
               value={item.itemName}
               placeholder="enter product name"
             />
+            </div>
+            <div>
+
             price
             <input
               type="number"
@@ -117,6 +122,9 @@ const InputForm = () => {
               value={item.itemPrice}
               placeholder="enter product price"
             />
+            </div>
+            <div>
+
             quantity
             <input
               type="number"
@@ -125,11 +133,12 @@ const InputForm = () => {
               value={item.itemQuantity}
               placeholder="enter product quantity"
             />
+            </div>
           </div>
-          <button type="submit">submit</button>
+          <button type="submit">add item</button>
         </form>
         <form id="captureArea" onSubmit={onformsubmit}>
-          name
+          name of customer
           <input
             id="name"
             name="name"
@@ -138,6 +147,7 @@ const InputForm = () => {
             type="text"
             placeholder="name"
           />
+          <div>
           phone
           <input
             id="phone"
@@ -147,7 +157,9 @@ const InputForm = () => {
             type="number"
             placeholder="phone"
           />
-          age
+          </div>
+          
+          {/* age
           <input
             id="age"
             name="age"
@@ -155,7 +167,7 @@ const InputForm = () => {
             onChange={onChangeHandler}
             type="text"
             placeholder="age"
-          />
+          /> */}
           {formData.order.map((item, index) => {
             return (
               <div key={index}>
@@ -171,7 +183,7 @@ const InputForm = () => {
           gst(8%): {(amount * 0.08).toFixed(2)}
           </div>
           amount: {amount}
-          <button type="submit">submit</button>
+          {/* <button type="submit">submit</button> */}
         </form>
 
         {/* Button to trigger screenshot capture */}
@@ -181,7 +193,7 @@ const InputForm = () => {
         {image && (
           <div>
             <h3>Captured Screenshot</h3>
-            <img id="capture" src={image} alt="Captured Screenshot" style={{ width: '600px' }} />
+            <img id="capture" src={image} alt="Captured Screenshot" style={{ width: '300px' }} />
           </div>
         )}
       </div>
