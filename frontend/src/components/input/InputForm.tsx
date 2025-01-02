@@ -5,7 +5,6 @@ import html2canvas from 'html2canvas';
 interface FormData {
   name: string;
   phone: number;
-  // age: number;
   order: item[];
 }
 
@@ -14,7 +13,6 @@ const InputForm = () => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     phone: 0,
-    // age: 0,
     order: [],
   });
 
@@ -80,7 +78,6 @@ const InputForm = () => {
       const formattedDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}_${date.getHours().toString().padStart(2, '0')}-${date.getMinutes().toString().padStart(2, '0')}`;
 
     link.download = `${formData.name}_${formattedDate}.png`;
-      // link.download =  formData.name+"_"+Date + '.png';
       link.click();
     } else {
       console.log("No image to download");
@@ -159,15 +156,6 @@ const InputForm = () => {
           />
           </div>
           
-          {/* age
-          <input
-            id="age"
-            name="age"
-            value={formData.age}
-            onChange={onChangeHandler}
-            type="text"
-            placeholder="age"
-          /> */}
           {formData.order.map((item, index) => {
             return (
               <div key={index}>
@@ -183,7 +171,6 @@ const InputForm = () => {
           gst(8%): {(amount * 0.08).toFixed(2)}
           </div>
           amount: {amount}
-          {/* <button type="submit">submit</button> */}
         </form>
 
         {/* Button to trigger screenshot capture */}
