@@ -135,7 +135,7 @@ const InputForm = () => {
           <button type="submit">add item</button>
         </form>
         <form id="captureArea" onSubmit={onformsubmit}>
-          name of customer
+          Name of customer
           <input
             id="name"
             name="name"
@@ -145,7 +145,7 @@ const InputForm = () => {
             placeholder="name"
           />
           <div>
-          phone
+          Phone No.
           <input
             id="phone"
             name="phone"
