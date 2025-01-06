@@ -5,7 +5,6 @@ import html2canvas from 'html2canvas';
 interface FormData {
   name: string;
   phone: number;
-  // age: number;
   order: item[];
 }
 
@@ -14,7 +13,6 @@ const InputForm = () => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     phone: 0,
-    // age: 0,
     order: [],
   });
 
