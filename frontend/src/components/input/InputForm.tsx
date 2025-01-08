@@ -174,8 +174,8 @@ const InputForm = () => {
         </form>
 
         {/* Button to trigger screenshot capture */}
-        <button onClick={captureScreenshot}>Capture Screenshot</button>
-        <button onClick={handleDownload}>download</button>
+        <button onClick={captureScreenshot}>Capture Screenshot of bill</button>
+        <button onClick={handleDownload}>Download the screenshot</button>
         {/* Display the captured screenshot */}
         {image && (
           <div>
